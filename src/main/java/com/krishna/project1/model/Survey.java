@@ -5,12 +5,13 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="Survey")
+@Document(collection="survey")
 public class Survey {
 	@Id
 	private String id;
 	private String title;
 	private List<Question> questions;
+	private String adminId;
 	public String getId() {
 		return id;
 	}
@@ -28,6 +29,12 @@ public class Survey {
 	}
 	public void setQuestions(List<Question> questions) {
 		this.questions = questions;
+	}
+	public String getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
 	}
 	
 	
